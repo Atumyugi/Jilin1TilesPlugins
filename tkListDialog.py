@@ -27,7 +27,8 @@ class TkListDialogClass(QDialog,Ui_Jilin1TilesDialogBase):
 
         self.tileHead = "https://api.jl1mall.com/getMap/{z}/{x}/{-y}?mk="
         self.mks = {
-            "2022年度全国高质量一张图" : "2d9bf902749f1630bc25fc720ba7c29f",
+            "全球一张图" : "2d9bf902749f1630bc25fc720ba7c29f",
+            "2023年度全国高质量一张图" : "73ad26c4aa6957eef051ecc5a15308b4",
             "2022年第一季度北京市海淀区" : "436c9b6f7fac4c7dae44cec950b2835f",
             "2022年第二季度北京市海淀区" : "f02810d6a4769d4e2f32334766f1366c",
             "2022年第三季度北京市海淀区": "edb9540a94251efaaf57719df82055f6",
