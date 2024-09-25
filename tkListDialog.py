@@ -76,11 +76,11 @@ class TkListDialogClass(QDialog,Ui_Jilin1TilesDialogBase):
         e.accept()
 
     def connectFunc(self):
-        self.intoWeb.clicked.connect(lambda: QDesktopServices.openUrl(QUrl("https://www.jl1mall.com/rskit/RSsserviceManage")))
+        self.intoWeb.clicked.connect(lambda: QDesktopServices.openUrl(QUrl("https://www.jl1mall.com/rskit")))
 
     def listViewClicked(self,modelIndex):
         currentMk = self.mks[ self.mkNames[modelIndex.row()] ]
-        wmsContent = "type=xyz&url=" + requests.utils.quote( "https://api.jl1mall.com/getMap/{z}/{x}/{-y}?mk=" + currentMk + "&tk=" + self.tkLE.text())
+        wmsContent = "type=xyz&url=" + requests.utils.quote( "https://api.jl1mall.com/getMap/{z}/{x}/{-y}?mk=" + currentMk + "&tk=" + self.tkLE.text(),safe=":/?")
 
         resLayer = QgsRasterLayer(wmsContent,self.mkNames[modelIndex.row()],'wms')
         QgsProject.instance().addMapLayer(resLayer)
